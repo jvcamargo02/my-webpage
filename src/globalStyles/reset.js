@@ -44,8 +44,9 @@ table {
 }
 
 :root {
+	@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Quicksand:wght@700&display=swap');
     --background-color: #1b1f24;
-    --font: 'Spacegrotesk', sans;
+    --font: 'Noto Sans TC', sans-serif;
 }
 
 body {

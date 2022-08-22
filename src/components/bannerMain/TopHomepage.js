@@ -41,17 +41,17 @@ export default function TopHomepage() {
             </LeftContent>
             <RightContent>
                 <h2>
-                    ABOUT ME{" "}
+                    ABOUT ME
                     <Lottie
                         options={aboutDefaultOptions}
                         height={30}
                         width={35}
-                    />{" "}
+                    />
                 </h2>
                 <br></br>
                 <p>
-                    Sou o João, graduando em Engenharia de Software e
-                    desenvolvedor web. <br /> <br />
+                    Graduando em Engenharia de Software e
+                    desenvolvedor web, com mais de 25 projetos realizados... <br /> <br />
                     {/*                    Aos 18 anos fundei
                     uma empresa, o que me
                     fez adquirir um grande interesse na área de desenvolvimento
@@ -138,6 +138,7 @@ max-width: 250px;
     h2 {
         line-height: 30px;
         display: flex;
+        font-weight: 700;
     }
 
     div {
@@ -156,6 +157,7 @@ max-width: 250px;
         color: #fff;
         margin-bottom: 40px;
         margin-left: auto;
+        font-weight: 700;
     }
 
     hr{

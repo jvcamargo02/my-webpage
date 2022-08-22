@@ -30,29 +30,30 @@ export default function Header() {
                 <h1>Camargo.dev</h1>
             </LeftContent>
             <RightContent>
-                <li>
-                    <a href="https://#.com.br">Home</a>
-                </li>
-                <li>
-                    <a href="https://#.com.br">About</a>
-                </li>
-                <li>
-                    <a href="https://#.com.br">Portfólio</a>
-                </li>
-                <li>
-                    <a href="https://#.com.br">Pages</a>
-                </li>
-                <li>
-                    <a href="https://#.com.br">Projects</a>
-                </li>
-                <li>
+                <ul>
+                    <li>
+                        <a href="https://#.com.br">Home</a>
+                    </li>
+                    <li>
+                        <a href="https://#.com.br">About</a>
+                    </li>
+                    <li>
+                        <a href="https://#.com.br">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="https://#.com.br">Pages</a>
+                    </li>
+                    <li>
+                        <a href="https://#.com.br">Projects</a>
+                    </li>
+                </ul>
                     <Lottie
                         options={hamburgerDefaultOptions}
                         height={40}
                         width={45}
                         speed={2}
                     />
-                </li>
+                
             </RightContent>
         </Container>
     );
@@ -77,7 +78,7 @@ const LeftContent = styled.section`
     font-weight: 700;
     font-size: 25px;
 
-    @media(max-width: 720px){
+    @media (max-width: 720px) {
         margin: 0 auto;
     }
 `;
@@ -88,13 +89,22 @@ const RightContent = styled.ul`
     display: flex;
     gap: 15px;
     align-items: center;
-    font-family: "Spacegrotesk", sans;
 
-    svg{
+    ul {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    svg {
         cursor: pointer;
     }
 
-    @media(max-width: 720px){
-        display: none;
+    @media (max-width: 720px) {
+
+        ul{
+                    display: none;
+        }
+
     }
 `;
