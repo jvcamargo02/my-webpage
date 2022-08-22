@@ -11,20 +11,19 @@ export default function BackgroundTopImage() {
 }
 
 const Container = styled.section`
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 33vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    overflow: hidden;
     z-index: -1;
+
 
     img {
         height: 80%;
         align-self: flex-end;
     }
-    @media (min-width: 800px) {
-        width: 96%;
+    @media (max-width: 500px) {
+        left: 10vw;
     }
 `;

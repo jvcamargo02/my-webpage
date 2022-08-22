@@ -27,12 +27,12 @@ export default function TopHomepage() {
                 <hr />
                 <main>
                     <h1>
-                        Hi there{" "}
+                        Hi there
                         <Lottie
                             options={hiDefaultOptions}
                             height={60}
                             width={65}
-                        />{" "}
+                        />
                         <br />
                         <span>I'm João Camargo,</span>
                         <br />a Software Engineer
@@ -76,7 +76,7 @@ const Container = styled.section`
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 830px) {
+    @media (max-width: 930px) {
         flex-direction: column;
         height: 80%;
         gap: 20px;
@@ -126,12 +126,14 @@ const LeftContent = styled.section`
 `;
 
 const RightContent = styled.section`
-    max-width: 50%;
+max-width: 250px;
     color: #fff;
-    font-size: 2.5vh;
+    font-size: 1.8vh;
     font-weight: 400;
-    width: 243px;
+    width: 40%;
     opacity: 0.8;
+    display: flex;
+    flex-direction: column;
 
     h2 {
         line-height: 30px;
@@ -153,6 +155,10 @@ const RightContent = styled.section`
         border-bottom: 1px solid #fff;
         color: #fff;
         margin-bottom: 40px;
-        margin-left: 80px;
+        margin-left: auto;
+    }
+
+    hr{
+        width: 100%;
     }
 `;

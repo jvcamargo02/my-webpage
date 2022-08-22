@@ -8,20 +8,19 @@ export default function Homepage() {
             <BannerMain />
 {/*             <Teste>
                 oi
-            </Teste> */}
+            </Teste>  */}
         </Container>
     );
 }
 
 const Container = styled.div`
 /*         position: absolute; */
-        box-sizing: border-box;
-        padding: 0 20px;
+
 `;
 
 const Teste = styled.div`
 
-    height: 300px;
+    height: 100vh;
     background-color: red;
 
 `

@@ -25,4 +25,6 @@ const Container = styled.div`
         rgba(27, 31, 36, 1) 100%
     );
     overflow: hidden;
+    box-sizing: border-box;
+        padding: 0 0 0 20px;
 `;
