@@ -4,6 +4,8 @@ import Lottie from "react-lottie";
 import animationDataHi from "../../assets/lottieFile/lf30_editor_3dsiacnp.json";
 import animationDataAbout from "../../assets/lottieFile/lf30_editor_elktbstn.json";
 
+
+
 export default function TopHomepage() {
     const hiDefaultOptions = {
         loop: true,
@@ -38,6 +40,7 @@ export default function TopHomepage() {
                         <br />a Software Engineer
                     </h1>
                 </main>
+                
             </LeftContent>
             <RightContent>
                 <h2>
@@ -93,11 +96,12 @@ const LeftContent = styled.section`
 
     main {
         display: flex;
-        font-size: 5vh;
+        font-size: 4.5vh;
         line-height: 1.132em;
         font-weight: 700;
         align-items: center;
         justify-content: start;
+        font-family: 'prima-sans-bold';
 
         span {
             font-size: 6vh;

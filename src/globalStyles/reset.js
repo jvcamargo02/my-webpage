@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
+
+import bold from "../assets/font.ttf";
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -44,16 +46,15 @@ table {
 }
 
 :root {
-	@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Quicksand:wght@700&display=swap');
+	font-family: 'Space Grotesk', sans-serif;
     --background-color: #1b1f24;
-    --font: 'Noto Sans TC', sans-serif;
+ 
 }
 
 body {
     background-color: var(--background-color);
-	font-family: var(--font);
     margin: 0;
-
+	font-family: var(--font);
     a {
     color: #FFF;
     text-decoration: none;
@@ -71,6 +72,11 @@ button{
 	font-family: var(--font);
 }
 
-`
+	@font-face {
+            font-family: "prima-sans-bold";
+			font-weight: 700;
+            src: url(${bold}) format("truetype");
+        }   
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

@@ -47,13 +47,12 @@ export default function Header() {
                         <a href="https://#.com.br">Projects</a>
                     </li>
                 </ul>
-                    <Lottie
-                        options={hamburgerDefaultOptions}
-                        height={40}
-                        width={45}
-                        speed={2}
-                    />
-                
+                <Lottie
+                    options={hamburgerDefaultOptions}
+                    height={40}
+                    width={45}
+                    speed={2}
+                />
             </RightContent>
         </Container>
     );
@@ -90,6 +89,7 @@ const RightContent = styled.ul`
     gap: 15px;
     align-items: center;
 
+
     ul {
         display: flex;
         gap: 15px;
@@ -101,10 +101,8 @@ const RightContent = styled.ul`
     }
 
     @media (max-width: 720px) {
-
-        ul{
-                    display: none;
+        ul {
+            display: none;
         }
-
     }
 `;
