@@ -20,7 +20,7 @@ export default function TopHomepage() {
         },
     };
     const aboutDefaultOptions = {
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: animationDataAbout,
         rendererSettings: {
@@ -28,7 +28,7 @@ export default function TopHomepage() {
         },
     };
     const devToolsDefaultOptions = {
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: animationDataDevTools,
         rendererSettings: {
@@ -36,21 +36,14 @@ export default function TopHomepage() {
         },
     };
     const followDefaultOptions = {
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: animationDataFollow,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice",
         },
     };
-    const scrollDefaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationDataScroll,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
+
     return (
         <Container>
             <LeftContent>
@@ -67,22 +60,21 @@ export default function TopHomepage() {
                         <span>I'm João Camargo,</span>
                         <br />a Software Engineer
                     </h1>
+
+                    
                 </main>
-                <svg class="arrows">
+                <p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis.</p>
+{/*                 <svg class="arrows">
                     <path class="a1" d="M0 0 L30 32 L60 0"></path>
                     <path class="a2" d="M0 20 L30 52 L60 20"></path>
                     <path class="a3" d="M0 40 L30 72 L60 40"></path>
-                </svg>
+                </svg> */}
             </LeftContent>
             <RightContent>
                 <RightBox>
                     <h2>
                         ABOUT ME
-                        <Lottie
-                            options={aboutDefaultOptions}
-                            height={30}
-                            width={35}
-                        />
+                    
                     </h2>
                     <br></br>
                     <p>
@@ -103,42 +95,33 @@ export default function TopHomepage() {
                 <RightBox>
                     <h2>
                         LANGUAGES & TOOLS
-                        <Lottie
-                            options={devToolsDefaultOptions}
-                            height={30}
-                            width={35}
-                        />
                     </h2>
                     <br></br>
                     <ul>
                         <ToolBox>
                             <FaReact />
+                            <span>React</span>
                         </ToolBox>{" "}
                         <ToolBox>
                             <SiTsnode />
+                            <span>TypeScript</span>
                         </ToolBox>
                         <ToolBox>
                             <GrNode />
+                            <span>Node</span>
                         </ToolBox>
                         <ToolBox>
                             <SiLinux />
-                        </ToolBox>
-                        <ToolBox id="button">
-                            ⇨<br />
-                            SEE ALL
+                            <span>Linux</span>
                         </ToolBox>
                     </ul>
-
+                    <button>SEE ALL ⇨</button>
                     <hr></hr>
                 </RightBox>
                 <RightBox type={"follow"}>
                     <h2>
-                        FOLLOW ME
-                        <Lottie
-                            options={followDefaultOptions}
-                            height={20}
-                            width={25}
-                        />
+                        FOLLOW ME ON
+
                     </h2>
                     <br></br>
                     <ul>
@@ -148,15 +131,15 @@ export default function TopHomepage() {
                         <Social>
                             <FaLinkedinIn />
                         </Social>{" "}
-                        <Social>
+{/*                         <Social>
                             <SiFacebook />
-                        </Social>{" "}
+                        </Social>{" "} */}
                         <Social>
                             <GrMail />
                         </Social>{" "}
-                        <Social>
+{/*                         <Social>
                             <GrInstagram />
-                        </Social>
+                        </Social> */}
                     </ul>
                 </RightBox>
             </RightContent>
@@ -216,72 +199,9 @@ const LeftContent = styled.section`
         border: none;
     }
 
-    .arrows {
-        width: 60px;
-        height: 72px;
-        position: fixed;
-    left: 35%;
-    bottom: 20px;
-    }
-
-    .arrows path {
-        stroke: #FFF;
-        fill: transparent;
-        stroke-width: 1px;
-        animation: arrow 2s infinite;
-        -webkit-animation: arrow 2s infinite;
-    }
-
-    @keyframes arrow {
-        0% {
-            opacity: 0;
-        }
-        40% {
-            opacity: 1;
-        }
-        80% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @-webkit-keyframes arrow /*Safari and Chrome*/ {
-        0% {
-            opacity: 0;
-        }
-        40% {
-            opacity: 1;
-        }
-        80% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
-    .arrows path.a1 {
-        animation-delay: -1s;
-        -webkit-animation-delay: -1s; /* Safari 和 Chrome */
-    }
-
-    .arrows path.a2 {
-        animation-delay: -0.5s;
-        -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
-    }
-
-    .arrows path.a3 {
-        animation-delay: 0s;
-        -webkit-animation-delay: 0s; /* Safari 和 Chrome */
-    }
-
-    @media (max-width: 1150px) {
-        
-        .arrows {
-            display: none;
-        }
+    p{  
+        margin-top: 20px;
+        max-width: 400px;
     }
 
     @media (max-width: 800px) {
@@ -294,7 +214,7 @@ const RightBox = styled.section`
     color: #fff;
     font-size: 1.8vh;
     font-weight: 400;
-
+    align-items: center;
     opacity: 0.8;
     display: flex;
     flex-direction: column;
@@ -304,13 +224,17 @@ const RightBox = styled.section`
         display: flex;
         font-weight: 700;
         align-items: center;
+        width: 100%;
+        margin-right: ${(props) => (props.type === "follow" ? 0 : " auto")};
+        justify-content: ${(props) => (props.type === "follow" ? "center" : "flex-start")}
     }
 
-    div {
+/*     div {
         margin: 0 5px !important;
         display: inline-block;
         opacity: ${(props) => (props.type === "follow" ? 0.5 : 1)};
-    }
+        justify-content: ${(props) => (props.type === "follow" ? "center" : "flex-s")};
+    } */
 
     p {
         box-sizing: border-box;
@@ -323,7 +247,14 @@ const RightBox = styled.section`
         color: #fff;
         margin-bottom: 20px;
         margin-left: auto;
-        font-weight: 700;
+        
+    }
+
+    button:hover{
+        background-color: #FFF;
+  color: black;
+  transition: 0.4s;
+  transform: translate3d(6px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
     }
 
     hr {
@@ -334,16 +265,9 @@ const RightBox = styled.section`
         display: flex;
         gap: 5px;
         margin-bottom: 20px;
-
-        #button {
-            font-size: 12px;
-            cursor: pointer;
-        }
-
-        
     }
-    @media (max-width: 1150px) {
-    }
+
+
 `;
 
 const RightContent = styled.div`
@@ -351,7 +275,7 @@ const RightContent = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 3vh;
 
     @media (max-width: 1150px) {
         max-width: 400px;
@@ -362,37 +286,49 @@ const RightContent = styled.div`
         }
 
         section:first-child{
-            display: initial; !important
+            display: initial;
         }
     }
 `;
 const ToolBox = styled.li`
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    opacity: 0.2;
+    opacity: 0.3;
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
     text-align: center;
-    font-weight: 700;
-    border-radius: 5px;
+    font-weight: 600;
     flex-direction: column;
-    color: var(--background-color);
+    color: #FFF;
     font-size: 35px;
+    cursor: pointer;    
+    margin-left: 10px;
+
+    span{ 
+        font-size: 13px;
+
+    }
+    &:hover{
+        color: #FFF;
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
 `;
 
 const Social = styled.li`
     height: 30px;
     width: 30px;
-    background-color: #fff;
+    background-color: transparent;
     opacity: 0.2;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--background-color);
+    color: #FFF;
     font-size: 22px;
     cursor: pointer;
+
+    &:hover{
+        color: #FFF;
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
 `;

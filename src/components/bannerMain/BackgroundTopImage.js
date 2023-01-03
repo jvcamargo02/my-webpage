@@ -5,7 +5,7 @@ import myProfile from "../../assets/images/ceb0e70a-41c3-4550-8cef-ed274b95521f_
 export default function BackgroundTopImage() {
     return (
         <Container>
-            <img src={myProfile} />
+            <img src={myProfile} onLoad={(e) => console.log(e)}/>
         </Container>
     );
 }
