@@ -12,6 +12,8 @@ services:
         max-size: "10m"
         max-file: "5"
     working_dir: /usr/src/mywebsite
-    command: npm run build
+    command: bash -c "npm run build && npm i -g serve && serve -s build -l 3000"
+    ports:
+      - "3000:3000"
     volumes:
       - /usr/src/mywebsite/front-end:/usr/src/mywebsite/build
